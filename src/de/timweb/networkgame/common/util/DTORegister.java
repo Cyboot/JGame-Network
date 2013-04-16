@@ -1,4 +1,4 @@
-package de.timweb.networkgame.common;
+package de.timweb.networkgame.common.util;
 
 import java.awt.Color;
 import java.util.HashMap;
@@ -8,9 +8,8 @@ import com.esotericsoftware.kryonet.EndPoint;
 
 import de.timweb.networkgame.common.entity.Entity;
 import de.timweb.networkgame.common.entity.PlayerEntity;
-import de.timweb.networkgame.common.util.Vector2d;
 
-public class DTO {
+public class DTORegister {
 
 	static public void register(EndPoint endPoint) {
 		Kryo kryo = endPoint.getKryo();

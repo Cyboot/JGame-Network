@@ -12,8 +12,7 @@ public class PlayerEntity extends Entity {
 	private static final int	SIZE				= 20;
 	private static final double	ACCL				= 0.003;
 	private static final double	DEACCL				= ACCL / 4;
-	// private Color color;
-	private final Vector2d		direction			= new Vector2d();
+
 	private boolean				isPlayer;
 
 	public PlayerEntity(Vector2d pos, boolean isPlayer) {

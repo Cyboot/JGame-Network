@@ -26,6 +26,8 @@ public class Game {
 	}
 
 	public void update(int delta) {
+
+		// TODO: check if new ServerValues
 		Lock lock = null;
 		Map<Integer, Entity> entitymap = NetworkAC.n.getEntitymap(lock);
 		for (Entry<Integer, Entity> entry : entitymap.entrySet()) {
@@ -39,7 +41,7 @@ public class Game {
 				enemy = (PlayerEntity) e;
 		}
 
-
+		// TODO: send only Player controlled Entities
 		if (lastServerUpdate > 250) {
 			lastServerUpdate = 0;
 			NetworkAC.n.sendObject(player);

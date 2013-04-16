@@ -18,10 +18,10 @@ import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
 
 import de.timweb.networkgame.client.ClientAC;
-import de.timweb.networkgame.common.DTO;
 import de.timweb.networkgame.common.entity.Entity;
 import de.timweb.networkgame.common.log.Log;
 import de.timweb.networkgame.common.log.ServerLog;
+import de.timweb.networkgame.common.util.DTORegister;
 
 
 public class ServerAC extends JFrame {
@@ -60,7 +60,7 @@ public class ServerAC extends JFrame {
 
 		System.out.println("Starting Server...");
 		server = new Server(100 * 1024, 100 * 1024);
-		DTO.register(server);
+		DTORegister.register(server);
 		server.addListener(new ServerListener());
 
 		try {
@@ -81,6 +81,11 @@ public class ServerAC extends JFrame {
 			@Override
 			public void run() {
 				while (true) {
+					// TODO: real Game.update()
+					// TODO: check how often Server can push Updates to Client
+
+					// TODO: own Entities for Server, update with ServerValues
+
 					server.sendToAllTCP(entitymap);
 
 					try {

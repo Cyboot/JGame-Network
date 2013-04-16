@@ -10,8 +10,8 @@ import com.esotericsoftware.kryonet.Client;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 
-import de.timweb.networkgame.common.DTO;
 import de.timweb.networkgame.common.entity.Entity;
+import de.timweb.networkgame.common.util.DTORegister;
 
 public class NetworkAC {
 	public static final NetworkAC	n			= new NetworkAC();
@@ -44,7 +44,7 @@ public class NetworkAC {
 		client = new Client();
 		client.start();
 
-		DTO.register(client);
+		DTORegister.register(client);
 
 		client.addListener(new NetworkListener());
 
